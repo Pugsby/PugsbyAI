@@ -16,14 +16,20 @@ textarea.addEventListener('input', () => {
 const sendButton = document.getElementById('sendButton');
 sendButton.addEventListener('click', async () => {
     const message = textarea.value;
-    if (!message) return;
     
+    if (!message) return;
+    if (message == '!credits') {
+        document.body.className = 'END';
+        console.log(message.upper + message)
+        document.body.innerHTML = '<center><h1>Creator:</h1><h3>Pugsby</h3><br><h2>Reverse Proxy Creator:</h2><h3>Mubilop</h3><br><h2></h2><img height="10%" src="assets/fish.gif">fish</center>';
+        return
+    };
     messageHistory.push({ role: 'user', content: message });
     const recentMessages = messageHistory.slice(-40);
     const userMessageHTML = marked.parse(`<strong>User:</strong> ${message}`);
     responseDiv.innerHTML += `<div class="you">${userMessageHTML}</div>`;
     sendButton.classList.add('invisible'); 
-
+    
     try {
         const response = await fetch(`${reverseProxy}/chat/completions`, {
             method: 'POST',
@@ -78,6 +84,11 @@ fetch(`${reverseProxy}/models`)
 const emoteCheckbox = document.getElementById('emotePickerCheck');
 emoteCheckbox.addEventListener('change', () => {
     emoteButton.classList.toggle('invisible', !emoteCheckbox.checked);
+});
+
+const prettyMenu = document.getElementById('prettyMenu');
+prettyMenu.addEventListener('change', () => {
+    settingsMenu.classList.toggle('settingsLag', prettyMenu.checked);
 });
 
 const emoteButton = document.getElementById('emoteButton');
@@ -154,3 +165,4 @@ const fish = new Audio('assets/FISH.mp3');
 document.getElementById('fish').addEventListener('click', () => {
     fish.play();
 });
+
