@@ -1,0 +1,307 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: var(--font);
+    color: var(--textColor);
+	--skibidi: none
+}
+
+.lightMode {
+    background-color: white;
+    background-image: url("assets/bg.png");
+    --textColor: black;
+    --revTextColor: white;
+    --aiColor: rgb(133, 133, 133);
+    --youColor: rgb(166, 147, 255);
+    --rgb: 255;
+    --buttonColor: white;
+	--sb-thumb-color: #ffffff;
+
+}
+
+.darkMode {
+    background-color: black;
+    background-image: url("assets/bgDark.png");
+    --textColor: white;
+    --revTextColor: white;
+    --aiColor: rgb(119, 119, 119);
+    --youColor: rgb(80, 21, 168);
+    --rgb: 0;
+    --buttonColor: white;
+	--sb-thumb-color: #ffffff;
+
+}
+
+.darkestMode {
+    background-color: rgb(20, 20, 20);
+    background-image: url("assets/bgAdditive.png");
+    --textColor: white;
+    --revTextColor: white;
+    --aiColor: rgb(0, 0, 0);
+    --youColor: rgb(0, 0, 0);
+    --rgb: 0;
+	--sb-thumb-color: #ffffff;
+    --buttonColor: white;
+}
+
+.skibidiBopBopHmYesYes {
+    background-color: rgb(20, 20, 20);
+    background-image: url("assets/GETOUT.webp");
+    --textColor: rgb(255, 0, 0);
+    --revTextColor: rgb(255, 0, 0);
+    --aiColor: rgb(0, 0, 0);
+    --youColor: rgb(0, 0, 0);
+    --rgb: 0;
+    --buttonColor: rgb(255, 0, 0);
+	--skibidi: url("assets/GETOUT.webp");
+	--sb-thumb-color: #ff0000;
+}
+
+
+.crimsonMode {
+    background-color: crimson;
+    background-image: url("assets/bgAdditive.png");
+    --textColor: white;
+    --revTextColor: white;
+    --aiColor: rgb(85, 15, 15);
+    --youColor: rgb(163, 20, 49);
+    --rgb: 0;
+    --buttonColor: crimson;
+	--sb-thumb-color: crimson;
+
+}
+
+.vomitMode {
+    background-color: rgb(43, 255, 0);
+    background-image: url("assets/bgAdditive.png");
+    --textColor: rgb(255, 251, 0);
+    --revTextColor: rgb(0, 0, 0);
+    --aiColor: rgb(236, 213, 0);
+    --youColor: rgb(43, 255, 0);
+    --rgb: 69;
+    --buttonColor: rgb(0, 146, 7);
+	--sb-thumb-color: #fffb00;
+
+}
+
+.container {
+    width: 90vw;
+    height: 90vh;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.69);
+    outline: 3px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(var(--rgb), var(--rgb), var(--rgb), 0.4);
+    backdrop-filter: blur(5px);
+    transition: 60ms;
+    padding: 10px 30px;
+}
+
+#mb {
+    width: 95%;
+    height: auto;
+    resize: none;
+    position: absolute;
+    bottom: 3.5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 10px;
+    outline: 3px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(5px);
+    transition: 60ms;
+    border-radius: 15px;
+}
+
+#mb:hover {
+    background-color: rgba(80, 80, 80, 0.1);
+}
+
+button {
+    border-radius: 15px;
+    z-index: 69420;
+    background-color: var(--buttonColor);
+	background-image: var(--skibidi);
+}
+
+#sendButton, #emoteButton {
+    position: absolute;
+    bottom: 3.5%;
+    aspect-ratio: 1;
+}
+
+#sendButton {
+    right: 1.9%;
+}
+
+#emoteButton {
+    left: 1.9%;
+}
+
+#settingsButton, #closeSettingsButton {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#settingsMenu {
+    position: fixed;
+    width: 85vw;
+    height: 85vh;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.69);
+    outline: 3px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 10px 30px;
+    transition: all 100ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: rgba(var(--rgb), var(--rgb), var(--rgb), 0.4);
+}
+
+.invisible {
+    transform: scale(0);
+}
+
+#response {
+    max-height: 70%;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.ai, .you {
+    border-radius: 15px;
+    color: var(--revTextColor);
+    padding: 1px;
+    margin-bottom: 10px;
+}
+
+.ai {
+    background-color: var(--aiColor);
+    border-bottom-left-radius: 5px;
+    margin-right: 40px;
+}
+
+.you {
+    background-color: var(--youColor);
+    border-bottom-right-radius: 5px;
+    text-align: right;
+    margin-left: 40px;
+}
+
+.ai p {
+    margin-left: 10px;
+}
+
+.you p {
+    margin-right: 10px;
+}
+
+.smoothTextInput {
+    border-radius: 5px;
+}
+
+#rpurl {
+    width: 250px;
+}
+
+textarea {
+    color: var(--textColor);
+    font-family: var(--font);
+}
+
+.context-menu {
+    display: none;
+    position: absolute;
+    background: rgba(var(--rgb), var(--rgb), var(--rgb), 0.1);
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 15px;
+}
+
+.context-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.context-menu li {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.context-menu li:hover {
+    background: rgba(var(--rgb), var(--rgb), var(--rgb), 0.4);
+}
+
+#emojiPicker {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    position: absolute;
+    background: var(--buttonColor);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    z-index: 69420;
+    bottom: 0;
+    left: 70px;
+}
+
+.emoji {
+    cursor: pointer;
+    padding: 5px;
+    display: inline-block;
+    font-size: 24px;
+}
+
+#searchInput {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+.mtcContainer {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    text-align: center;
+}
+
+
+body {
+	--sb-track-color: #232E33;
+	--sb-size: 14px;
+  }
+  
+body::-webkit-scrollbar {
+	width: var(--sb-size)
+  }
+  
+  body::-webkit-scrollbar-track {
+	background: var(--sb-track-color);
+	border-radius: 3px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+	background: var(--sb-thumb-color);
+	border-radius: 3px;
+	
+  }
+  
+  @supports not selector(::-webkit-scrollbar) {
+	body {
+	  scrollbar-color: var(--sb-thumb-color)
+					   var(--sb-track-color);
+	}
+  }
+
+.firstMessage {
+	text-align: center;
+	margin: auto;
+}

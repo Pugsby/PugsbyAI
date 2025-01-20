@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PugsbyAI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=send,settings"/>
+    <link rel="shortcut icon" href="assets/favi.png" type="image/x-icon">
+</head>
+<body class="darkMode">
+    <div class="container">
+        <h1>PugsbyAI</h1>
+        <p id="response"><i class="firstMessage">Hello user! this took a lot of effort, please don't bully me bc it looks mid. If you want to criticize me, please use constructive criticism.</i></p>
+        <button id="sendButton"><span class="material-symbols-outlined">send</span></button>
+        <button id="emoteButton" class="invisible"><img src="assets/sneaky.png" width="24.04px"></button>
+        <div id="emojiPicker">
+            <div id="emojiList">
+                <div class="emoji" onclick="selectEmoji('💀')">💀</div>
+                <div class="emoji" onclick="selectEmoji('😀')">😀</div>
+                <div class="emoji" onclick="selectEmoji('❤️')">❤️</div>
+                <div class="emoji" onclick="selectEmoji('😊')">😊</div>
+                <div class="emoji" onclick="selectEmoji('😢')">😢</div>
+                <div class="emoji" onclick="selectEmoji('😎')">😎</div>
+                <div class="emoji" onclick="selectEmoji('😡')">😡</div>
+                <div class="emoji" onclick="selectEmoji('🤔')">🤔</div>
+                <div class="emoji" onclick="selectEmoji('👍')">👍</div>
+            </div>
+        </div>
+        <textarea name="messageBox" id="mb"></textarea>
+    </div>
+    <div id="settingsMenu" class="invisible">
+        <h1>Settings</h1>
+        <button id="closeSettingsButton">X</button>
+        <p>Reverse Proxy Url:<br>
+            <input type="text" class="smoothTextInput" id="rpurl">/chat/completions
+            <small><br>https://penguinai.derpygamer2142.com/v1 recommended.</small>
+        </p>
+        <p>Model:<br>
+            <input list="modelList"><datalist id="modelList"></datalist>
+            <small><br>llama-3.1-8b-instant recommended.</small>
+        </p>
+        <p>Theme<br>
+            <button id="darkTheme">Dark Mode</button>
+            <button id="lightTheme">Light Mode</button>
+            <button id="crimsonTheme">Crimson Mode</button>
+            <button id="vomitTheme">Gnarpy Mode</button> <!-- I thought this was gonna look ugly but it actually looked kinda nice so I renamed it -->
+            <button id="darkestTheme">Darkest Mode</button>
+            <button id="skibidiTheme">DON'T PRESS</button>
+            
+        </p>
+        <p>Emoji Button <input type="checkbox" id="emotePickerCheck"></p>
+        <img src="assets/fish.gif" id="fish" height="10%" width="50%">
+    </div>
+<!--    <div id="context-menu" class="context-menu">
+        <ul>
+            <li id="option1">Option 1</li>
+            <li id="option2">Option 2</li>
+            <li id="option3">Option 3</li>
+        </ul>
+    </div> I want to kill myself-->
+    <button id="settingsButton"><span class="material-symbols-outlined">settings</span></button>
+    <script src="script.js"></script>
+</body>
+</html>
